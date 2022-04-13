@@ -10,3 +10,5 @@ Found a Temporary fix to the file being too large to upload with:
 git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch .terraform/'
 
 Still not too sure about it, no problems have arisen yet but will be on the lookout.
+
+Problem has arised in that running that command to fix the file being to large makes it so that it uninstalls terraform. So you'd have to continously run terraform init and retrack your files with git. Feel like this could be solved if the next time I dont track the large file with git and just upload everything else.
