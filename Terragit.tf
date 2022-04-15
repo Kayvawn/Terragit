@@ -60,9 +60,23 @@ resource "aws_instance" "ThirdInst" {
 
 resource "aws_security_group" "sg8080" {
   ingress {
-    from_port   = 8080
+    from_port   = var.server_port
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+##Variables
+##Server Port Variable
+
+variable "server_port" {
+  default = 8080
+}
+
+##Outputs
+
+output "Public_IP" {
+    value = aws_instance.FirstInst.public_ip
+  
 }
